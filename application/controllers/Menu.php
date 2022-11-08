@@ -68,7 +68,7 @@ class Menu extends CI_Controller
             $this->db->insert('user_sub_menu', $data);
             $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
             Sub Menu Baru sudah ditambahkan!</div>');
-            redirect('menu/submmenu');
+            redirect('menu/submenu');
         }
     }
 }

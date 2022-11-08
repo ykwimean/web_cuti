@@ -19,3 +19,16 @@ function is_logged_in()
         }
     }
 }
+
+function check_access($role_id, $menu_id)
+{
+    $dim = get_instance();
+
+    $dim->db->where('role_id', $role_id);
+    $dim->db->where('menu_id', $menu_id);
+    $result = $dim->db->get('user_access_menu');
+
+    if ($result->num_rows() > 0) {
+        return "checked='checked'";
+    }
+}
